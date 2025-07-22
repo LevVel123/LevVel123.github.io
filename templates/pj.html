@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>project_meneger</title>
+</head>
+<body>
+    <div class="forma">
+        <h3>Добавить проект:</h3>
+        <form method="POST" action="/project_meneger">
+            <input type="text" name="title" placeholder="Название проекта"><br>
+            <input type="text" name="des" placeholder="Описание"><br>
+            <input type="text" name="date" placeholder="Дата сдачи"><br>
+            <button type="submit">Внести данные</button>
+        </form>
+    </div>
+    <div class="project">
+        <h3>Ваши проекты:</h3>
+        <ul>
+            {% for pj in proj %}
+            <li>ID: {{ pj['id'] }}<br>Название проекта: {{ pj['title'] }}<br>Описание: {{ pj['description'] }}<br>Дата сдачи: {{ pj['date'] }}<br></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="{{ url_for('del_pj') }}"><button>Выбрать и удалит проект</button></a><br>
+    <a href="{{ url_for('index') }}">Вернуться на главную</a>
+</body>
+</html>

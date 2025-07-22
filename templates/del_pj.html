@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+</head>
+<body>
+    <div class="forma">
+        <h3>Удалить проект:</h3>
+        <form method="POST" action="/project_meneger/delete">
+            <input type="text" name="id" placeholder="ID проекта"><br>
+            <button type="submit">Удалить проект</button>
+        </form>
+    </div>
+    <a href="{{ url_for('pj') }}">Вернуться</a>
+</body>
+</html>
